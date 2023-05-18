@@ -5,13 +5,13 @@ Browser::Browser() {
 }
 
 void Browser::newWindow() {
-    // TODO
+    
     windows.prepend(Window());
     return;
 }
 
 void Browser::closeWindow() {
-    // TODO
+    
     if(windows.isEmpty())
         return;
     else{
@@ -21,7 +21,7 @@ void Browser::closeWindow() {
 }
 
 void Browser::switchToWindow(int index) {
-    // TODO
+    
     if(index < 0)
         return;
     windows.moveToIndex(index,0);
@@ -33,14 +33,14 @@ Window &Browser::getWindow(int index) {
 }
 
 void Browser::moveTab(Window &from, Window &to) {
-    // TODO
+    
     to.newTab(from.getActiveTab());
     from.closeTab();
     return;
 }
 
 void Browser::mergeWindows(Window &window1, Window &window2) {
-    // TODO
+    
     while(!(window2.isEmpty())){
         window2.changeActiveTabTo(0);
         window1.newTab(window2.getActiveTab());
@@ -50,7 +50,7 @@ void Browser::mergeWindows(Window &window1, Window &window2) {
 }
 
 void Browser::mergeAllWindows() {
-    // TODO
+    
     Node <Window> * first = windows.getFirstNode();
     Node <Window> * mover;
     if(first == NULL)
@@ -66,14 +66,14 @@ void Browser::mergeAllWindows() {
 }
 
 void Browser::closeAllWindows() {
-    // TODO
+    
     windows.removeAllNodes();
     return;
 }
 
 
 void Browser::closeEmptyWindows() {
-    // TODO
+    
     Node <Window> * mover = windows.getFirstNode();
     int counter = 0;
     int l_size = windows.getSize();
