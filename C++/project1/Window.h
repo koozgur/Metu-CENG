@@ -11,7 +11,6 @@ public:
 
     Tab getActiveTab();
     bool isEmpty() const;
-
     void newTab(const Tab &tab);
     void closeTab();
     void moveActiveTabTo(int index);
