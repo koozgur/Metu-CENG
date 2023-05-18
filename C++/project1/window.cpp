@@ -6,7 +6,7 @@ Window::Window() {
 }
 
 Tab Window::getActiveTab() {
-    // TODO
+    
     if(tabs.isEmpty())
         return Tab();
     else{
@@ -15,7 +15,7 @@ Tab Window::getActiveTab() {
 }
 
 bool Window::isEmpty() const {
-    // TODO
+    
     if(tabs.isEmpty())
         return 1;
     else{
@@ -24,14 +24,14 @@ bool Window::isEmpty() const {
 }
 
 void Window::newTab(const Tab &tab) {
-    // TODO
+    
     tabs.insertAtIndex(tab,activeTab + 1);
     activeTab++;
     return;
 }
 
 void Window::closeTab() {
-    // TODO
+    
     if(activeTab == tabs.getSize() - 1){
         tabs.removeNodeAtIndex(activeTab);
         activeTab--;
@@ -45,10 +45,10 @@ void Window::closeTab() {
 }
 
 void Window::moveActiveTabTo(int index) {
-    // TODO
+    
     if(index < 0)
         return;
-    if(activeTab < 0) /* window boş*/
+    if(activeTab < 0) /* window is empty*/
         return;
     if(index >= tabs.getSize()){
         tabs.moveToIndex(activeTab,tabs.getSize()-1);
@@ -62,7 +62,7 @@ void Window::moveActiveTabTo(int index) {
 }
 
 void Window::changeActiveTabTo(int index) {
-    // TODO
+    
     if(index >= tabs.getSize()){
         return;
     }
@@ -76,7 +76,7 @@ void Window::changeActiveTabTo(int index) {
 }
 
 void Window::addTab(Node<Tab> &tab) {
-    // TODO
+    
     if(tabs.isEmpty()){
         tabs.append(tab.data);
         activeTab = 0;
