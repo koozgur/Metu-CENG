@@ -7,7 +7,7 @@ CPP=g++
 # CFLAGS+=-g
 CFLAGS+=-I./include -Wall -Wpedantic -std=c++11 -g
 
-all: bin/4ut0d1ff
+all: bin/autodiff
 
 bin/4ut0d1ff: src/main.cpp ${OBJS} | bin
 	$(CPP) $(CFLAGS) -o $@ $^
