@@ -3,18 +3,24 @@
 #include "unary.h"
 #include "binary.h"
 
-//example testcase to run
 int main() {
 {
-   sym::Var v = "v";
-   sym::Const c = -2;
-   sym::Const cc = 0;
-   sym::NegOp n = cc.eval();
+   //simple test case to check
+   /*
+   sym::Var x = "x", y = "y";
+   sym::Expr f = 2.0 * y + x;
+   auto f_y = f.diff(y);
+   sym::Const val = 2;
+   auto sanity = (*f_y == val ? "pass" : "fail");
+   std::cout << "check: " << sanity << std::endl;
+   std::cout << *(f_y->eval()) << std::endl;
+   */
 
-   sym::Expr e = v*n +c;
-   std::cout << e << std::endl;
-   std::cout << *(e.diff(v)) << std::endl;
-   std::cout << (e==c) << std::endl;
+   //another test case
+    sym::Var y="y";
+    sym::Const c=2.0;
+    sym::MulOp op(c.eval(), y.eval());
+    std::cout << op << std::endl;
 }
 
 return 0 ;
